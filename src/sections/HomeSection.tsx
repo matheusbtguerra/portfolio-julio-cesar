@@ -2,8 +2,15 @@ import { Button, Divider } from "antd";
 import LiquidEther from "../components/LiquidEther";
 
 export const HomeSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="w-full h-[80vh] sm:h-[90vh] md:h-[100dvh] relative">
+    <section id="home" className="w-full h-[80vh] sm:h-[90vh] md:h-[100dvh] relative">
       <div className="absolute inset-0 w-full h-full">
         <LiquidEther
           colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
@@ -44,6 +51,7 @@ export const HomeSection = () => {
             size="large"
             className="rounded-sm bg-purple-700 hover:!bg-purple-600 border-none px-6 py-4 sm:px-8 sm:py-6 h-auto !font-lexant"
             style={{ fontFamily: "inherit" }}
+            onClick={() => scrollToSection("contact")}
           >
             <span className="font-lexant text-base sm:text-lg">
               Entre em contato

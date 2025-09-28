@@ -21,9 +21,18 @@ export const HeaderDrawer = ({ setIsDrawerOpen }: HeaderDrawerProps) => {
     }, 300);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    handleClose();
+  };
+
   return (
     <div
-      className="fixed inset-0 z-[200] bg-black/60 flex"
+      className="fixed inset-0 bg-black/60 flex"
+      style={{ zIndex: 10000 }}
       onClick={handleClose}
     >
       <div
@@ -41,25 +50,25 @@ export const HeaderDrawer = ({ setIsDrawerOpen }: HeaderDrawerProps) => {
         />
         <p
           className="font-lexant text-xl text-white cursor-pointer hover:text-purple-700 transition"
-          onClick={handleClose}
+          onClick={() => scrollToSection("home")}
         >
           Home
         </p>
         <p
           className="font-lexant text-xl text-white cursor-pointer hover:text-purple-700 transition"
-          onClick={handleClose}
+          onClick={() => scrollToSection("about")}
         >
           Sobre mim
         </p>
         <p
           className="font-lexant text-xl text-white cursor-pointer hover:text-purple-700 transition"
-          onClick={handleClose}
+          onClick={() => scrollToSection("portfolio")}
         >
           Portfólio
         </p>
         <p
           className="font-lexant text-xl text-white cursor-pointer hover:text-purple-700 transition"
-          onClick={handleClose}
+          onClick={() => scrollToSection("contact")}
         >
           Contato
         </p>

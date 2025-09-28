@@ -1,4 +1,4 @@
-import { Button, Divider } from "antd";
+import { Divider } from "antd";
 import TiltedCard from "../components/TiltedCard/TiltedCard";
 
 export const PortfolioSection = () => {
@@ -54,7 +54,10 @@ export const PortfolioSection = () => {
   ];
 
   return (
-    <section className="w-full min-h-[100dvh] flex flex-col items-center justify-center bg-black text-white px-4 py-16">
+    <section
+      id="portfolio"
+      className="w-full min-h-[100dvh] flex flex-col items-center justify-center bg-black text-white px-4 py-16"
+    >
       <div className="text-center mb-12 max-w-4xl">
         <h1 className="font-bebas text-4xl sm:text-5xl md:text-6xl text-white mb-4">
           Meu Portfólio
