@@ -55,7 +55,7 @@ export function Header() {
                   : "text-2xl lg:text-4xl"
               }`}
             >
-              LOGO
+              JC Studio
             </p>
           </div>
 
