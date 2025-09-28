@@ -35,13 +35,14 @@ export function Header() {
     <>
       <header
         className={`
-          fixed top-0 z-100 w-full flex items-center justify-center px-6 transition-all duration-500
+          fixed top-0 w-full flex items-center justify-center px-6 transition-all duration-500
           ${
             isHeaderMinimized
               ? "h-[6dvh] bg-transparent py-1"
               : "h-[10dvh] bg-black/65 backdrop-blur-md py-4"
           }
         `}
+        style={{ zIndex: 9999 }} 
       >
         <div
           className={`flex min-w-fit w-full lg:w-[70%] justify-between items-center gap-20`}
