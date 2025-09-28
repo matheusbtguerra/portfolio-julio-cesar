@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
 import { AboutSection } from "./sections/AboutSection"
 import { HomeSection } from "./sections/HomeSection"
@@ -10,6 +11,7 @@ function App() {
       <HomeSection />
       <AboutSection />
       <PortfolioSection />
+      <Footer />
     </div>
   )
 }

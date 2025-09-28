@@ -16,6 +16,13 @@ export function Header() {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -49,11 +56,12 @@ export function Header() {
         >
           <div className="flex">
             <p
-              className={`font-bebas transition-all duration-500 ${
+              className={`font-bebas transition-all duration-500 cursor-pointer ${
                 isHeaderMinimized
                   ? "text-lg lg:text-2xl"
                   : "text-2xl lg:text-4xl"
               }`}
+              onClick={() => scrollToSection("home")}
             >
               JC Studio
             </p>
@@ -73,6 +81,7 @@ export function Header() {
               className={`font-lexant transition-all duration-500 cursor-pointer ${
                 isHeaderMinimized ? "text-lg" : "text-2xl"
               } hover:text-purple-700`}
+              onClick={() => scrollToSection("home")}
             >
               Home
             </p>
@@ -80,6 +89,7 @@ export function Header() {
               className={`font-lexant transition-all duration-500 cursor-pointer ${
                 isHeaderMinimized ? "text-lg" : "text-2xl"
               } hover:text-purple-700`}
+              onClick={() => scrollToSection("about")}
             >
               Sobre mim
             </p>
@@ -87,6 +97,7 @@ export function Header() {
               className={`font-lexant transition-all duration-500 cursor-pointer ${
                 isHeaderMinimized ? "text-lg" : "text-2xl"
               } hover:text-purple-700`}
+              onClick={() => scrollToSection("portfolio")}
             >
               Portfólio
             </p>
@@ -94,6 +105,7 @@ export function Header() {
               className={`font-lexant transition-all duration-500 cursor-pointer ${
                 isHeaderMinimized ? "text-lg" : "text-2xl"
               } hover:text-purple-700`}
+              onClick={() => scrollToSection("contact")}
             >
               Contato
             </p>
